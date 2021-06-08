@@ -1,0 +1,15 @@
+<p>My Info</p>
+<div>
+    <h2>First Name {{firstname}}</h2>
+    <h2>last Name {{lastname}}</h2>
+    <h2>First Name {{mob}}</h2>
+</div>
+
+<div>
+    <input type="text" [(ngModel)]="technology" placeholder="Enter technology"/><br>
+    <h2>You have entered {{technology}}</h2>
+
+    <button (click)="showMsg()">showMsg</button>
+    <button (click)="clearMsg()">clearMsg</button>
+    <h2>{{msg}}</h2>
+</div>

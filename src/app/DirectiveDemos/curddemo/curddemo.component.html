@@ -1,0 +1,49 @@
+<p>curddemo</p>
+
+<div>
+    <table>
+       <tr><td>ID</td><td><input type="number" [(ngModel)]="pid" placeholder="Enter Id"></td></tr>
+       <tr><td>Product</td><td><input type="text" [(ngModel)]="pname" placeholder="Enter Product"></td></tr>
+       <tr><td>Price</td><td><input type="number" [(ngModel)]="price" placeholder="Enter Price"></td></tr>
+       <button (click)="AddData()" *ngIf="isadded">ADD</button>
+       <button (click)="UpdateData()" *ngIf="isedited">UPDATE</button>
+    </table>
+</div>
+<div  *ngIf="productsArr.length > 0">
+    <table border="4">
+        <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Product Price
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let p of productsArr; let i=index'>
+                <td>
+                    <button (click)="edit(i)">Edit</button>
+                </td>
+                <td>
+                    <button (click)="remove(i)">Remove</button>
+                </td>
+                
+                
+                <td>
+                    {{p.pid}}
+                </td>
+                <td>
+                    {{p.pname}}
+                </td>
+                <td>
+                    {{p.price}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,27 @@
+<p>databinding-demos works!</p>
+
+<!-- propertyBinding -->
+<!-- <img [src]="logopath">  -->
+<!-- <img src='{{logopath}}'> -->
+<!-- <input type="text" [disabled]='textdisabled'> -->
+<!-- <my-msg  prefixMsg= "Website name is " [siteName] = "my"> </my-msg>  -->
+<!-- <a [href]='url'>click
+</a> -->
+
+<p>Now observe Component property binding</p>
+
+<br/><my-msg  prefixMsg= "Website name is " [siteName] = "website.name"> </my-msg> 
+
+<br/><my-msg  prefixMsg= " Google " bind-siteName = "website.name"> </my-msg>
+
+<br/><my-msg  prefixMsg= " FaceBook " siteName = "{{website.name}}"> </my-msg> 
+
+<a href="">clickhere</a>
+<br/>Url: <a [href]="website.url" [textContent]="website.name"> </a>
+<br/>Url: <a bind-href="website.url" bind-textContent="website.name"> </a>
+<br/>Url: <a href="{{website.url}}" textContent="{{website.name}}"> </a>
+<p [textContent]="website.description"> </p>
+<p bind-textContent="website.description"> </p>
+<p textContent="{{website.description}}"> </p>
+
+

@@ -1,0 +1,28 @@
+<p>pipe-demos works!</p>
+<table border="4">
+    <th>
+        EmpId
+    </th>
+    <th>
+        EmpName
+    </th>
+    <th>
+        Gender
+    </th>
+    <th>
+        Designation
+    </th>
+    <th>
+       YrOfExperience
+    </th>
+    <tr *ngFor="let emp of Employees">
+        
+        <td>{{emp.Empid}}</td>
+        <td>{{emp.Empname}}</td>
+        <td>{{emp.Gender}}</td>
+        <td>{{emp.Designation|designationPipe:emp.YrOfExp}}</td>
+        <td>{{emp.YrOfExp}}</td>
+        
+    </tr>
+
+</table>

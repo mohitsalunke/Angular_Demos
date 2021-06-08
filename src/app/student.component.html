@@ -1,0 +1,82 @@
+<p>student sheet </p>
+
+<table>
+    <th style="color:orange;">Student Marksheet</th>
+    <tr><td>Roll No:</td>
+    <td><input type="number" [(ngModel)]="rollno" placeholder="Enter rollno"></td></tr>
+    <tr><td>Student Name:</td>
+        <td><input type="text" [(ngModel)]="name" placeholder="Enter name"></td></tr>
+        <tr><td>English:</td>
+            <td><input type="number" [(ngModel)]="Eng" placeholder="Enter Eng Marks"></td></tr>
+            <tr><td>Math:</td>
+                <td><input type="number" [(ngModel)]="Math" placeholder="Enter Math Marks"></td></tr>
+                <tr><td>Marathi:</td>
+                    <td><input type="number" [(ngModel)]="Marathi" placeholder="Enter Marathi Marks"></td></tr>
+                    <tr><td>Sci:</td>
+                        <td><input type="number" [(ngModel)]="Sci" placeholder="Enter Sci Marks"></td></tr>
+                        <tr><td>Total:</td>
+                            <td><input type="number" [(ngModel)]="total" placeholder="Enter Total"></td></tr>
+                            <tr><td>Percentage:</td>
+                                <td><input type="number" [(ngModel)]="percentage" placeholder="Enter Percentage"></td></tr>
+                                <tr><button (click)="calculate()">Display</button></tr>
+
+
+</table>
+<table border="4">
+    <thead>
+        <tr>
+            <th>
+                RollNo
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                English
+            </th>
+            <th>
+                Maths
+            </th>
+            <th>
+                Marathi
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Total
+            </th>
+            <th>
+                Percentage
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                {{rollno}}
+            </td>
+            <td>
+                {{name}}
+            </td>
+            <td>
+                {{Eng}}
+            </td>
+            <td>
+                {{Math}}
+            </td>
+            <td>
+                {{Marathi}}
+            </td>
+            <td>
+                {{Sci}}
+            </td>
+            <td>
+                {{total}}
+            </td>
+            <td>
+                {{percentage}}
+            </td>
+        </tr>
+    </tbody>
+</table>

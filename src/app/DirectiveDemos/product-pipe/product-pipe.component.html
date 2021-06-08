@@ -1,0 +1,58 @@
+<p>product-pipe works!</p>
+
+
+
+
+<table>
+    <thead>
+        <th>
+            Pid
+        </th>
+        <th>
+            Pname
+        </th>
+        <th>
+            qty
+        </th>
+        <th>
+            Discount
+        </th>
+        <th>
+            price
+        </th>
+        <th>
+            total
+        </th>
+        <th>
+            discount price
+        </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products">
+            <td>
+                {{p.pid}}
+            </td>
+            <td>
+                {{p.pname}}
+            </td>
+            <td>
+                {{p.qty}}
+            </td>
+            <td>
+                {{p.dis}}
+            </td>
+            <td>
+                {{p.price}}
+            </td>
+            <td>
+                {{p.price*p.qty}}
+            </td>
+            <td>
+                {{(p.price*p.qty)-((p.price*p.qty)|myProductPipe:p.dis)}}
+            </td>
+            
+           
+           
+        </tr>
+    </tbody>
+</table>

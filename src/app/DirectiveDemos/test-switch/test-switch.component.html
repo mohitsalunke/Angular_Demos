@@ -1,0 +1,10 @@
+<p>test-switch works!</p>
+<ul *ngFor="let p of person" [ngSwitch]="p.country">
+ <li *ngSwitchCase="'India'" class="text-hero">{{p.name}} ({{p.country}})</li>
+ <li *ngSwitchCase="'Russia'" class="text-primary">{{p.name}} ({{p.country}})</li>
+ <li *ngSwitchCase="'Bangladesh'" class="text-mac">{{p.name}} ({{p.country}})</li>
+ <li *ngSwitchCase="'Indonesia'" class="text-mac">{{p.name}} ({{p.country}})</li>
+ <li *ngSwitchDefault class="test-mac">{{p.name}} {{p.country}}</li>
+
+
+</ul>

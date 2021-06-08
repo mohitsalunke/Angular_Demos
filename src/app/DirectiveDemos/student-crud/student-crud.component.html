@@ -1,0 +1,94 @@
+<p>student-marksheet</p>
+
+<div>
+    <tr>
+        <td><input type="number" [(ngModel)]="studid" placeholder="Enter StudentId"></td>
+    </tr>
+    <tr>
+        <td><input type="text" [(ngModel)]="studname" placeholder="Enter StudentName"></td>
+    </tr>
+    <tr>
+        <td><input type="number" [(ngModel)]="studclass" placeholder="Enter StudentClass"></td>
+    </tr>
+    <tr style="color: orange; text-transform: uppercase; font-style: italic;">MARKS</tr>
+    <tr>
+        <td><input type="number" [(ngModel)]="engmarks" placeholder="Enter English Marks"></td>
+    </tr>
+    <tr>
+        <td><input type="number" [(ngModel)]="mathmarks" placeholder="Enter Maths Marks"></td>
+    </tr>
+    <tr>
+        <td><input type="number" [(ngModel)]="marathimarks" placeholder="Enter Marathi Marks"></td>
+    </tr>
+
+    <button (click)="AddMarks()" *ngIf="ismarksadded">ADD</button>
+    <button (click)="UpdateMarks()" *ngIf="ismarksedited">UPDATE</button>
+    <button (click)="calculateMarks()">Calculate</button>
+   
+</div>
+
+<div *ngIf="students.length > 0">
+    <table border="4">
+        <thead>
+            <th>
+                Student Id
+            </th>
+            <th>
+                Student Name
+            </th>
+            <th>
+                Student Class
+            </th>
+            <th>
+                English Marks
+            </th>
+            <th>
+                Maths Marks
+            </th>
+            <th>
+                Marathi Marks
+            </th>
+            <th>
+                Total
+            </th>
+        </thead>
+        <tbody >
+            <tr *ngFor='let stud of students; let i=index'>
+                <td>
+                    {{stud.studid}}
+                </td>
+                <td>
+                    {{stud.studname}}
+                </td>
+                <td>
+                    {{stud.studclass}}
+                </td>
+                <td>
+                    {{stud.engmarks}}
+                </td>
+                <td>
+                    {{stud.mathmarks}}
+                </td>
+                <td>
+                    {{stud.marathimarks}}
+                </td>
+                <td>
+                    {{stud.total}}
+                </td>
+                <td>
+                    <button (click)="edit(i)">Edit</button>
+                </td>
+                <td>
+                    <button (click)="remove(i)">Remove</button>
+                </td>
+                
+                
+            </tr>
+
+        </tbody>
+        
+        
+    </table>
+
+</div>
+

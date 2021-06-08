@@ -1,0 +1,56 @@
+<p style="color: red;">Registration Page</p>
+<div>
+    <input type="text" [(ngModel)]="firstName" placeholder="Enter FirstName"/><br>
+    <input type="text" [(ngModel)]="lastName" placeholder="Enter LastName"/><br>
+    <input type="text" [(ngModel)]="email" placeholder="Enter Email"/><br>
+    <input type="number" [(ngModel)]="mob" placeholder="Enter Mobile"/><br>
+    <input type="text" [(ngModel)]="quali" placeholder="Enter Qualification"/><br>
+    <input type="text" [(ngModel)]="DOB" placeholder="Enter BirthDate"/><br>
+
+    <table border="4">
+        <thead>
+            <tr>
+                <th>
+                    FirstName
+                </th>
+                <th>
+                    LastName
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Mobile
+                </th>
+                <th>
+                    Qualification
+                </th>
+                <th>
+                    DOB
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    {{firstName}}
+                </td>
+                <td>
+                    {{lastName}}
+                </td>
+                <td>
+                    {{email}}
+                </td>
+                <td>
+                    {{mob}}
+                </td>
+                <td>
+                    {{quali}}
+                </td>
+                <td>
+                    {{DOB}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

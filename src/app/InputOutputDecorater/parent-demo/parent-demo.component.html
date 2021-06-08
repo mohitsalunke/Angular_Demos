@@ -1,0 +1,6 @@
+<p>parent-demo works!</p>
+
+<input type="text" [(ngModel)]="names" placeholder="Search name"><br>
+<app-child-demo [empname]="names" (send)="onSend($event)"></app-child-demo>
+<br>
+<h2>{{fromchild}}</h2>

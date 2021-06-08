@@ -1,0 +1,71 @@
+<p>employee-crud
+</p>
+<div>
+    <tr><td>EmpId:<input type="number" [(ngModel)]="Empid" placeholder="Enter EmpId"></td></tr>
+    <tr><td>EmpName:<input type="text" [(ngModel)]="Empname" placeholder="Enter EmpName"></td></tr>
+    <tr><td>Bsalary:<input type="number" [(ngModel)]="Bsalary" placeholder="Enter Bsalary"></td></tr>
+    <button (click)="AddEmp()" *ngIf="isadded">ADD</button>
+    <button (click)="UpdateEmp()" *ngIf="isedited">UPDATE</button>
+    <button (click)="calculateGsalary()" >Calculate</button>"
+</div>
+<div *ngIf="Employees.length>0">
+    <table border="4">
+        <thead>
+            <th>
+                employee id
+            </th>
+            <th>
+                employee name
+            </th>
+            <th>
+                Bsalary
+            </th>
+            <th>
+                Hra
+            </th>
+            <th>
+                Da
+            </th>
+            <th>
+                Gsalary
+            </th>
+            
+        </thead>
+        <tbody >
+            <tr *ngFor='let emp of Employees; let i=index'>
+                <td>
+                    {{emp.Empid}}
+                </td>
+                <td>
+                    {{emp.Empname}}
+                </td>
+                <td>
+                    {{emp.Bsalary}}
+                </td>
+                <td>
+                    {{emp.hra}}
+                </td>
+                <td>
+                    {{emp.da}}
+                </td>
+                <td>
+                    {{emp.Gsalary}}
+                </td>
+                
+                <td>
+                    <button (click)="edit(i)">Edit</button>
+                </td>
+                <td>
+                    <button (click)="remove(i)">Remove</button>
+                </td>
+                
+                
+            </tr>
+
+        </tbody>
+        
+        
+    </table>
+
+</div>
+

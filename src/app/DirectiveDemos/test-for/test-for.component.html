@@ -1,0 +1,42 @@
+<p>test-for works!</p>
+<div>
+    <input [(ngModel)]="searchText" placeholder="search Text here">
+    <h1>All Employees .....</h1>
+   <table class="table table-hover">
+   <thead>
+       <tr>
+           <th>Index</th>
+           <th>Code</th>
+           <th>Name</th>
+           <th>Gender</th>
+           <th>Salary</th>
+           <th>FullTime</th>
+           
+           <th>Isfirst</th>
+           <th>IsLast</th>
+           <th>IsEven</th>
+           <th>IsOdd</th>
+       </tr>
+   </thead>
+   <!-- <tbody  *ngFor='let employee of employees|myfilter:searchText;let i=index;let isFirst = first;
+   let isLast = last;let isEven = even; let isOdd = odd; '> -->
+   <tbody>
+   <tr *ngFor='let employee of employees|myfilter:searchText;let i=index;let isFirst = first;
+   let isLast = last;let isEven = even; let isOdd = odd; '>
+      <!-- <tr *ngIf='employee.fulltime'> -->
+
+       <td>{{i+1}}</td>
+       <td>{{employee.Code}}</td>
+           <td>{{employee.name}}</td>
+           <td>{{employee.gender}}</td>
+           <td>{{employee.salary}}</td>
+           <td>{{employee.fulltime}}</td>
+           
+           <td>{{isFirst}}</td>
+           <td>{{isLast}}</td>
+           <td>{{isEven}}</td>
+           <td>{{isOdd}}</td>
+       </tr>
+
+   </tbody>
+</table>

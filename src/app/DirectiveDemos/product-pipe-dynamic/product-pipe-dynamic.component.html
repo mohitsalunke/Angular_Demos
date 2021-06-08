@@ -1,0 +1,82 @@
+<p>product-pipe-dynamic</p>
+
+<div>
+    <table>
+        <tr>
+            
+    <!-- <label>Obj Id</label> -->
+    <input type="number" [(ngModel)]="oid" placeholder="Enter id">
+
+</tr>
+<tr>
+    <!-- <label>Obj Name</label> -->
+    <input type="text" [(ngModel)]="oname" placeholder="Enter name">
+</tr>
+<tr>
+    <!-- <label>Price</label> -->
+    <input type="number" [(ngModel)]="oprice" placeholder="Enter price">
+</tr>
+<tr>
+    <!-- <label>Quantity</label> -->
+    <input type="number" [(ngModel)]="oqty" placeholder="Enter Quantity">
+</tr>
+<tr>
+    <!-- <label>Discount</label> -->
+    <input type="number" [(ngModel)]="odis" placeholder="Enter discount">
+    </tr>
+    <button (click)="AddObject()">ADD</button>
+</table>
+</div>
+<div>
+    <table>
+        <thead>
+            <th>
+                Obj Id
+            </th>
+            <th>
+                Obj Name
+            </th>
+            <th>
+                Obj Price
+            </th>
+            <th>
+                Obj Qty
+            </th>
+            <th>
+                Obj Dis
+            </th>
+            <th>
+                Total Price
+            </th>
+            <th>
+                Discount Price
+            </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let o of objects">
+                <td>
+                    {{o.oid}}
+                </td>
+                <td>
+                    {{o.oname}}
+                </td>
+                <td>
+                    {{o.oprice}}
+                </td>
+                <td>
+                    {{o.oqty}}
+                </td>
+                <td>
+                    {{o.odis}}
+                </td>
+                
+                <td>
+                    {{o.oprice*o.oqty}}
+                </td>
+                <td>
+                    {{(o.oprice*o.oqty)-((o.oprice*o.oqty)|myProductPipe:o.odis)}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

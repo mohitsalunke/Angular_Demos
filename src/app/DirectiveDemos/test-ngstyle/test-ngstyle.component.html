@@ -1,0 +1,15 @@
+<p>test-ngstyle works!</p>
+
+<div [ngStyle]="{'background-color':'green','color':'white'}">Ng Style With background color abd color</div>
+
+<div [ngStyle]="{'background-color':mycolor,'font-style':mystyle}">Ng Style with dynamic variable</div>
+
+<div [ngStyle]="{'background-color':mycolor,'font-style':mystyle, 'font-size':'20px'}">Ng Style with dynamic variable</div>
+
+<div [ngClass]="'.bold-text'">{{text}}</div>
+
+<div [ngClass]="csscolor">Mohit With Variable</div>
+
+<div [ngClass]="getFontName()">Using Component method</div>
+
+<div [ngClass]="{'small-text': true, 'red': false}">Using object</div>
