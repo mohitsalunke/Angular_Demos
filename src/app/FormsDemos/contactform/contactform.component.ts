@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactformComponent implements OnInit {
 
+  value:any;
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  log(contactForm:any) {
+    this.value = contactForm;
+    console.log(contactForm);
+}
 
 }

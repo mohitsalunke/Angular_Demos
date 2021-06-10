@@ -1,0 +1,65 @@
+<p>student-form works!</p>
+<div class="container">
+    <form #studentForm="ngForm" (ngSubmit)="onClick(studentForm)">
+        <div class="form-group">
+            <label>FullName</label>
+            <input type="text" name="fullname" ngModel #fullname="ngModel" required minlength="5">
+
+        </div>
+        <div *ngIf="!fullname?.valid && (fullname?.dirty || fullname?.touched)">
+            <div [hidden]="!fullname.errors?.required">FullName is Required</div>
+            <div [hidden]="!fullname.errors?.minlength">Minimum length should be 5</div>
+            
+        </div>
+        <div class="form-group">
+            <label>UserName</label>
+            <input type="text" name="username" ngModel #username="ngModel" required pattern="[a-zA-Z0-9]{5}">
+
+        </div>
+        <div *ngIf="!username?.valid && (username?.dirty || username?.touched)">
+            <div [hidden]="!username.errors?.required">UserName is Required</div>
+            <div [hidden]="!username.errors?.pattern">Username should have everthing</div>
+            
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="text" name="password" ngModel #password="ngModel" required minlength="8">
+
+        </div>
+        <div *ngIf="!password?.valid && password?.touched">
+            <div [hidden]="!password.errors?.required">Password is Required</div>
+            <div [hidden]="!password.errors?.minlength">Password length should be Minimum 8</div>
+            
+        </div>
+        <div ngModelGroup="Contact-Details">
+            <div class="form-group">
+                <label>Mobile</label>
+                <input type="text" name="mobile" ngModel #mobile="ngModel" required minlength="10">
+    
+            </div>
+            <div *ngIf="!mobile?.valid && mobile?.touched">
+                <div [hidden]="!mobile.errors?.required">Mobile is Required</div>
+                <div [hidden]="!mobile.errors?.minlength">Mobile length should be Minimum 10</div>
+                
+            </div>
+            <div class="form-group">
+                <label>Tele-phone</label>
+                <input type="text" name="Telephone" ngModel #Telephone="ngModel" required minlength="6">
+    
+            </div>
+            <div *ngIf="!Telephone?.valid && Telephone?.touched">
+                <div [hidden]="!Telephone.errors?.required">Mobile is Required</div>
+                <div [hidden]="!Telephone.errors?.minlength">Mobile length should be Minimum 6</div>
+                
+            </div>
+
+        </div>
+
+
+        <input type="submit" class="btn btn-danger" value="submit" [disabled]="studentForm.invalid">
+    </form>
+</div>
+<div>
+    <pre>{{studentForm.value | json}}</pre>
+    
+</div>

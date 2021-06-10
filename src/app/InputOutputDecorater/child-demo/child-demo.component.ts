@@ -6,23 +6,28 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   templateUrl: './child-demo.component.html',
   styleUrls: ['./child-demo.component.css']
 })
-export class ChildDemoComponent {
-
-  @Input()
-  empname:string;
-  @Output() send:EventEmitter<string>=new EventEmitter<string>();
-  msg:string="Not-Found";
+export class ChildDemoComponent implements OnInit{
 
   
-  empsArr=[{Eid:101,Ename:"Mohit"},{Eid:102,Ename:"Rohit"},{Eid:103,Ename:"Krishna"}];
+  @Input() empname:string="";
+  @Output() send:EventEmitter<string>=new EventEmitter<string>();
+  msg: string = 'not found';
+
+  
+  empsArr:any=[{Eid:101,Ename:"Mohit"},{Eid:102,Ename:"Rohit"},{Eid:103,Ename:"Krishna"}];
 
   
   constructor() { 
   this.empname="";
   }
 
+  ngOnInit(): void {
+    console.log(this.empname);
+  }
+
   onClick()
   {
+    this.msg = 'Not Found';
     for(let e of this.empsArr)
     {
       if(e.Ename===this.empname)
@@ -37,7 +42,7 @@ export class ChildDemoComponent {
     this.send.emit(this.msg);
   }
 
-
+ 
 
 
 

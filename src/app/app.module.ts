@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,6 +30,14 @@ import { ParentDemoComponent } from './InputOutputDecorater/parent-demo/parent-d
 import { ChildDemoComponent } from './InputOutputDecorater/child-demo/child-demo.component';
 import { ContactComponent } from './FormsDemos/contact/contact.component';
 import { ContactformComponent } from './FormsDemos/contactform/contactform.component';
+import { AddParentComponent } from './InputOutputDecorater/add-parent/add-parent.component';
+import { AddChildComponent } from './InputOutputDecorater/add-child/add-child.component';
+import { LifecyclemethodsComponent } from './LifeCycleDemo/lifecyclemethods/lifecyclemethods.component';
+import { ReactiveRegistrationFormComponent } from './FormsDemos/reactive-registration-form/reactive-registration-form.component';
+import { ReactiveContactFormComponent } from './FormsDemos/reactive-contact-form/reactive-contact-form.component';
+import { StudentFormComponent } from './FormsDemos/student-form/student-form.component';
+import { CallServiceComponent } from './ServiceDemos/call-service/call-service.component';
+import { EmployeeServiseComponent } from './ServiceDemos/employee-servise/employee-servise.component';
 
 @NgModule({
   declarations: [
@@ -59,9 +67,17 @@ import { ContactformComponent } from './FormsDemos/contactform/contactform.compo
     ParentDemoComponent,
     ChildDemoComponent,
     ContactComponent,
-    ContactformComponent
+    ContactformComponent,
+    AddParentComponent,
+    AddChildComponent,
+    LifecyclemethodsComponent,
+    ReactiveRegistrationFormComponent,
+    ReactiveContactFormComponent,
+    StudentFormComponent,
+    CallServiceComponent,
+    EmployeeServiseComponent
   ],
-  imports: [FormsModule,
+  imports: [FormsModule,ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule
   ],
