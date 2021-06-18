@@ -1,0 +1,9 @@
+<p>service-using-http-client works!</p>
+
+<button (click)="getUserData()">Call Service</button>
+<table>
+    <tr *ngFor="let u of Data">
+        <td>{{u.login}}</td>
+       <td><img *ngIf="u.avatar_url" [src]="u.avatar_url" width="100" height="100"/></td>
+    </tr>
+</table>

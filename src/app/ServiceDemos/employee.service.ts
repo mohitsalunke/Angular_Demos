@@ -18,6 +18,9 @@ export class EmployeeService {
 
   remove(empdata:any)
   {
+    console.log("i'm in service remove");
     this.employeeArr.splice(empdata,1);
   }
+
+ 
 }

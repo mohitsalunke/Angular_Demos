@@ -1,0 +1,80 @@
+<p>student-component works!</p>
+<div class="container">
+    <form #studForm="ngForm" (ngSubmit)="Add(studForm.value)">
+        <div class="form-group">
+            <label for="studeid">Student Id</label>
+            <input type="text" name="studid" class="form-control" [(ngModel)]="Student.studid">
+        </div>
+        <div class="form-group">
+            <label for="studname">Student Name</label>
+            <input type="text" name="studname" class="form-control" [(ngModel)]="Student.studname">
+        </div>
+        <div class="form-group">
+            <label for="clgname">College Name</label>
+            <input type="text" name="clgname" class="form-control" [(ngModel)]="Student.clgname">
+        </div>
+        <div class="form-group">
+            <label for="city">City Name</label>
+            <input type="text" name="city" class="form-control" [(ngModel)]="Student.city">
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile</label>
+            <input type="text" name="mobile" class="form-control" [(ngModel)]="Student.mobile">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success" [disabled]="!studForm.valid">Submit</button>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success" [disabled]="!studForm.valid">Submit</button>
+        </div>
+
+    </form>
+</div>
+<table border="4">
+    <thead>
+        <tr>
+            <th>
+                StudId
+            </th>
+            <th>
+                StudName
+            </th>
+            <th>
+                ClgName
+            </th>
+            <th>
+                City
+            </th>
+            <th>
+                Mobile
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of StudentForm; let i=index">
+            <td>
+               {{s.studid}} 
+            </td>
+            <td>
+                {{s.studname}} 
+             </td>
+             <td>
+                {{s.clgname}} 
+             </td>
+             <td>
+                {{s.city}} 
+             </td>
+             <td>
+                {{s.mobile}} 
+             </td>
+             <td><button (click)="edit(s)">Edit</button></td>
+             <td><button (click)="remove(s)">Remove</button></td>
+        </tr>
+    </tbody>
+
+</table>
+<div>
+    <pre>
+        {{value | json}}
+    </pre>
+</div>

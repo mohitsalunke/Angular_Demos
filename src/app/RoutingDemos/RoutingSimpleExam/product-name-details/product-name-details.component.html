@@ -1,0 +1,18 @@
+<p>product-name-details works!</p>
+<div>
+<table>
+   <thead>
+       <th>ProductId</th>
+       <th>name</th>
+       <th>price</th>
+   </thead>
+   <tbody>
+       <tr *ngIf="productlist">
+           <td>{{productlist.productId}}</td>
+           <td>{{productlist.name}}</td>
+           <td>{{productlist.price}}</td>
+       </tr>
+   </tbody>
+</table>
+</div>
+<button (click)="onBack()">Go Back</button>

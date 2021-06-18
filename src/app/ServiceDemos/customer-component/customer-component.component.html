@@ -1,0 +1,88 @@
+<h2 style="color: firebrick"><u>Enter Contact Details:</u></h2>
+<form
+  #customerForm="ngForm" (ngSubmit)="addCustomer(customerForm.value)"
+  
+  class="row gy-2 gx-3 align-items-center"
+  style="margin-left: 30px; margin-right: 30px"
+>
+  <div class="col-md-9">
+    <label for="cid">Customer Id :</label>
+    <input
+      type="text"
+      class="form-control"
+      name="cid"
+      [(ngModel)]="customer.cid"
+    
+    />
+  </div>
+  <div class="col-md-9">
+    <label for="cname">Customer Name:</label>
+    <input
+      type="text"
+      class="form-control"
+      name="cname"
+      [(ngModel)]="customer.cname"
+    
+    />
+  </div>
+  <div class="col-md-9">
+    <label for="caddress">Address:</label>
+    <input
+      type="text"
+      class="form-control"
+      name="caddress"
+      [(ngModel)]="customer.caddress"
+     
+    />
+</div>
+<div class="form-group">
+  <button class="btn btn-primary" type="submit">Submit Details</button>
+  
+</div>
+</form>
+<div>
+    <div *ngIf="customers.length > 0">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th>Customer Details</th>
+          </tr>
+          <tr>
+            <th>Sr. No.</th>
+            <th>Customer Id</th>
+            <th>Customer Name</th>
+            <th>Customer Address</th>
+            
+            <th></th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of customers; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ c.cid}}</td>
+            <td>{{ c.cname }}</td>
+            <td>{{ c.caddress }}</td>
+            
+            <td>
+              <button class="btn btn-danger" (click)="remove(c)">
+                Delete
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-success" (click)="edit(i)">
+                Edit
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div>
+      <pre>
+          {{customers | json}}
+      </pre>
+  </div>

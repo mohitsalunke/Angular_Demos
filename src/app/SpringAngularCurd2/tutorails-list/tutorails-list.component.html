@@ -1,0 +1,22 @@
+<p>tutorails-list works!</p>
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Published</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tutorial of tutorial">
+            <td>{{ tutorial.title }}</td>
+            <td>{{ tutorial.description }}</td>
+            <!-- <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td> -->
+            <td>{{tutorial.published}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

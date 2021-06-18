@@ -31,6 +31,7 @@ export class EmployeeServiseComponent implements OnInit {
 
   remove(empdata:any)
   {
+    console.log("i,m in component remove");
     this.sevObj.remove(empdata);
     
   }

@@ -1,0 +1,9 @@
+<p>select-form works!</p>
+<form [formGroup]="frameworkForm" (ngSubmit)="onSubmit()">
+    <select formControlName="name">
+        <option value="">Choose your options</option>
+        <option *ngFor="let f of frameWork">{{f}}</option>
+    </select>
+    <div class="error-block" *ngIf="submitted && handleError('name','required')">You must provide a value</div>
+    <button>Submit</button>
+</form>

@@ -1,0 +1,81 @@
+<p>rective-validation-form works!</p>
+<div class="container">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)" validate>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" formControlName="username"  required minlength="3">
+        </div>
+        <div *ngIf="!userForm.controls.username?.valid && (userForm.controls.username?.dirty ||userForm.controls.username?.touched)"
+            class="alert alert-danger">
+            <div [hidden]="!userForm.controls.username.errors?.required">
+                username is required
+            </div>
+            <div [hidden]="!userForm.controls.username.errors?.minlength">
+                UserName Minimum Length is {{userForm.controls.firstname.errors?.minlength?.requiredLength}}
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>PassWord</label>
+            <input type="text" class="form-control" name="password" formControlName="password">
+
+        </div>
+        <div *ngIf="!userForm.controls.password?.valid && (userForm.controls.password?.dirty ||userForm.controls.password?.touched)"
+            class="alert alert-danger">
+            <div [hidden]="!userForm.controls.password.errors?.required">
+                username is required
+            </div>
+            <div [hidden]="!userForm.controls.password.errors?.minlength">
+                UserName Minimum Length is {{userForm.controls.firstname.errors?.minlength?.requiredLength}}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email" formControlName="email">
+
+        </div>
+        <div *ngIf="!userForm.controls.email?.valid && (userForm.controls.email?.dirty ||userForm.controls.email?.touched)"
+            class="alert alert-danger">
+            <div [hidden]="!userForm.controls.email.errors?.required">
+                email is required
+            </div>
+            <div [hidden]="!userForm.controls.password.errors?.pattern">
+                Email Sh0uld be correct 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Please select Gender</label>
+            <input type="radio" value="female"class="form-control" name="gender" formControlName="gender">Male
+            <input type="radio" value="male"class="form-control" name="gender" formControlName="gender">Female
+        </div>
+        <label>Select Your Country</label>
+        <select formControlName="country">
+        <option  value="1" name="country">USA</option>
+        <option  value="2" name="country">India</option>
+        <option  value="3" name="country">Italy</option>
+       
+    </select>
+        <div formGroupName="contactDetails">
+            <div class="form-group">
+                <label>Landline</label>
+                <input type="text" class="form-control" name="landline" formControlName="landline">
+            </div>
+           
+            <div class="form-group">
+                <label>Street</label>
+                <input type="text" class="form-control" name="street" formControlName="street">
+            </div>
+           
+        </div>
+    <div class="form-group">
+        <button type="submit" [disabled]="userForm.valid">Submit</button>
+    </div>
+
+    <div>
+        <pre>
+            {{data | json}}
+        </pre>
+    </div>
+
